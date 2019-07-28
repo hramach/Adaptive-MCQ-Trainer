@@ -1,0 +1,54 @@
+MULTIPLE CHOICE TRAINER - MANUAL
+________________________________
+Author: Harish D. Ramachandran
+Version: 1.0
+Date: 2018-03-10
+
+INTRODUCTION
+------------
+
+The Multiple Choice Trainer allows the user to build and manipulate question 
+banks of multiple choice questions and then practice those questions. The
+manipulation of question banks can be done through the application or through
+the text files that the application reads from and writes to. 
+
+The core feature of this application, however, is its "adaptive" capabilities. 
+The application stores data on user competency in the various categories of 
+questions the user has discerned. It then utilizes this data to execute dynamic 
+weighted random selection from the question bank. As a result, the user should
+expect to see questions of categories that he struggles with more than those of
+categories of strength.
+
+NOTES ON KEY FEATURES
+---------------------
+
+- The name for the text file containing the answer histories for a particular 
+question bank is derived from the name of the question bank text file. 
+The following convention is observed: if "questions.txt" is the question bank 
+file, "questions_answerHistories.txt" is declared the answer histories file.
+	- Thus, only the question bank text file name is required for 
+	initialization.
+
+- The sort is done by question tag first, and then question 
+text (lexicographic)
+
+- File input and output to text files is done via certain templates. This 
+template must be followed for the program to parse question bank data and/or
+answer history. The templates are provided in the "extra" folder.
+
+- The statistics for "Overall" in the Progress menu will not always correspond
+to the sum of the statistics for all the tags. This is because multiple tags for
+a single question are permissible. Note also that any correspondency that does 
+exist can be corrupted if the user alters the answer histories file.
+
+- To understand the weighting algorithms of the dynamic weighted random
+selection, consider a question bank of two questions which are answered 
+alternatively. Assume that one question of the two questions is almost *always* 
+answered correctly, while the other is almost *never* answered correctly. As the
+total number of questions answered approaches infinity, the expected ratio of
+selection of the questions, by the implemented weighting algorithm, is 2:1. 
+	- This algorithm considers both available data and the lack thereof; if 
+	little data is available for a particular category, the chance of it being
+	selected increases. Also, if such a category demonstrates extreme tendencies
+	of accuracy or inaccuracy, the algorithm is not "reactionary" in that it
+	does not drastically increase the chance of selection. 

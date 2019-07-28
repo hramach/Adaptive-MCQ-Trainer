@@ -1,0 +1,18 @@
+{question}
+	A: {option A}
+	B: {option B}
+	C: {option C}
+	... // Note: This line should not be included
+	Z: {option Z}
+Answer: {character from A-Z}
+Explanation: {explanation}
+Tags: {tag 1}, {tag 2}, {tag 3}, ..., {tag n}
+// Include line of space between successive questions
+What is the answer to life, the universe, and everything?
+	A: faith
+	B: science
+	C: 42
+	D: unknowable
+Answer: C
+Explanation: See "The Hitchhiker's Guide to the Galaxy" by Douglas Adams.
+Tags: metaphysics, literature
